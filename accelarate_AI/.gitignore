@@ -1,0 +1,18 @@
+﻿.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/bronze/*.parquet
+data/silver/*.parquet
+data/gold/*.parquet
+data/profiles/*.json
+data/reports/*
+data/traces/*
+!data/**/.gitkeep
+.pytest_cache/
+.coverage
+htmlcov/
+
+source_tables = sorted({r["source_table"] for r in rules})
+df = silver_frames.get(source_tables[0])

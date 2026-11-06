@@ -1,0 +1,11 @@
+﻿langchain>=0.2
+langchain-anthropic
+streamlit>=1.32
+pandas==2.2.3
+pyarrow
+duckdb
+plotly
+python-dotenv
+pytest
+pytest-cov
+pytest-mock

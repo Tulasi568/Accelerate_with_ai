@@ -393,7 +393,9 @@ def _make_silver_tools(input_files: list[str], sttm_path: str, run_id: str):
 
 def _make_llm():
     from langchain_anthropic import ChatAnthropic
-    return ChatAnthropic(api_key=ANTHROPIC_API_KEY, model=ANTHROPIC_MODEL, temperature=0, max_tokens=LLM_MAX_TOKENS)
+    # temperature is intentionally omitted: this model rejects an explicit
+    # temperature value when the agent framework attaches structured output_config.
+    return ChatAnthropic(api_key=ANTHROPIC_API_KEY, model=ANTHROPIC_MODEL, max_tokens=LLM_MAX_TOKENS)
 
 
 # ---------------------------------------------------------------------------
